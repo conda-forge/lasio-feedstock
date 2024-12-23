@@ -1,5 +1,6 @@
 {% set name = "lasio" %}
 {% set version = "0.31" %}
+{% set python_min = "3.7" %}
 
 package:
   name: {{ name|lower }}
@@ -24,11 +25,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
     - setuptools_scm
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - chardet
     - pandas
     - openpyxl
@@ -40,6 +41,7 @@ test:
     - pip list
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
