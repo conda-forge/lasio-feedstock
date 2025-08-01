@@ -1,5 +1,5 @@
 {% set name = "lasio" %}
-{% set version = "0.31" %}
+{% set version = "0.32" %}
 {% set python_min = "3.7" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/kinverarity1/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 140eab1b74b63374bc2d1a96f83143823d3432f84bb32311071c40bb22f59d9c
+  sha256: 1c6ede6687c352939e8b3a778e301e1b1ed42a731de2264bec9126ae6351467f
 
 build:
   noarch: python
