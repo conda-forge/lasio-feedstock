@@ -13,7 +13,7 @@ Development: https://github.com/kinverarity1/lasio/
 
 Documentation: https://lasio.readthedocs.io/en/stable/
 
-This is a Python 3.7+ package to read and write Log ASCII Standard (LAS) files, used for borehole data such as geophysical, geological, or petrophysical logs.
+This is a Python 3.9+ package to read and write Log ASCII Standard (LAS) files, used for borehole data such as geophysical, geological, or petrophysical logs.
 
 It's compatible with versions 1.2 and 2.0 of the LAS file specification, published by the Canadian Well Logging Society. Support for LAS 3 is being worked on.
 
