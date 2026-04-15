@@ -1,18 +1,18 @@
 {% set name = "lasio" %}
-{% set version = "0.31" %}
-{% set python_min = "3.7" %}
+{% set version = "0.32" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://github.com/kinverarity1/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 140eab1b74b63374bc2d1a96f83143823d3432f84bb32311071c40bb22f59d9c
+  sha256: 1c6ede6687c352939e8b3a778e301e1b1ed42a731de2264bec9126ae6351467f
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: {{ PYTHON }} -m pip install .[all] -vv --no-deps --no-build-isolation
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ PKG_VERSION }}
   number: 0
@@ -26,11 +26,12 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - setuptools
-    - setuptools_scm
+    - hatchling
+    - hatch-vcs
   run:
     - python >={{ python_min }}
     - chardet
+    - numpy
     - pandas
     - openpyxl
 
@@ -48,7 +49,7 @@ about:
   home: https://github.com/kinverarity1/lasio
   summary: 'Read/write well data from Log ASCII Standard (LAS) files'
   description: |
-    This is a Python 3.7+ package to read and write Log ASCII Standard (LAS) files, used for borehole data such as geophysical, geological, or petrophysical logs.
+    This is a Python 3.9+ package to read and write Log ASCII Standard (LAS) files, used for borehole data such as geophysical, geological, or petrophysical logs.
 
     It's compatible with versions 1.2 and 2.0 of the LAS file specification, published by the Canadian Well Logging Society. Support for LAS 3 is being worked on.
 
